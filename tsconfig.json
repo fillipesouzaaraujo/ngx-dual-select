@@ -18,6 +18,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-dual-select": [
+        "dist/ngx-dual-select"
+      ],
+      "ngx-dual-select/*": [
+        "dist/ngx-dual-select/*"
+      ]
+    }
   }
 }
