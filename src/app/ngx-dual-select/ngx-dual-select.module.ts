@@ -10,8 +10,7 @@ import { NgxDualSelectComponent } from './ngx-dual-select.component';
     NgxDualSelectComponent
   ],
   exports: [
-    NgxDualSelectComponent,
-    NgxDualSelectModule
+    NgxDualSelectComponent
   ]
 })
 export class NgxDualSelectModule { }
