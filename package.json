@@ -10,6 +10,9 @@
     "e2e": "ng e2e"
   },
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {
     "@angular/animations": "~8.0.1",
     "@angular/common": "~8.0.1",
