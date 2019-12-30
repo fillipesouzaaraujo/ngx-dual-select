@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxDualSelectComponent } from './ngx-dual-select.component';
+import { NgxDualSelectComponent } from './components/dual-select/ngx-dual-select.component';
 
 @NgModule({
   imports: [

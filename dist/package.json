@@ -1,28 +1,9 @@
 {
   "name": "ngx-dual-select",
   "version": "0.0.4",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "npm version patch && ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "packagr": "ng-packagr -p package.json"
-  },
   "private": false,
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
-    },
-    "whitelistedNonPeerDependencies": [
-      "angular",
-      "rxjs",
-      "zone.js"
-    ]
   },
   "repository": {
     "type": "git",
@@ -64,5 +45,15 @@
     "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
-  }
+  },
+  "main": "bundles/ngx-dual-select.umd.js",
+  "module": "fesm5/ngx-dual-select.js",
+  "es2015": "fesm2015/ngx-dual-select.js",
+  "esm5": "esm5/ngx-dual-select.js",
+  "esm2015": "esm2015/ngx-dual-select.js",
+  "fesm5": "fesm5/ngx-dual-select.js",
+  "fesm2015": "fesm2015/ngx-dual-select.js",
+  "typings": "ngx-dual-select.d.ts",
+  "metadata": "ngx-dual-select.metadata.json",
+  "sideEffects": false
 }
