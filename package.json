@@ -13,6 +13,10 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/fillipesouzaaraujo/ngx-dual-select.git"
+  },
   "dependencies": {
     "@angular/animations": "~8.0.1",
     "@angular/common": "~8.0.1",
