@@ -25,6 +25,12 @@
       ],
       "ngx-dual-select/*": [
         "dist/ngx-dual-select/*"
+      ],
+      "ngx-dual-select-lib": [
+        "dist/ngx-dual-select-lib"
+      ],
+      "ngx-dual-select-lib/*": [
+        "dist/ngx-dual-select-lib/*"
       ]
     }
   }
