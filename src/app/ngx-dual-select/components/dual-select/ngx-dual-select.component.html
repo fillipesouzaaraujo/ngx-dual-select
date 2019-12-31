@@ -1,17 +1,35 @@
 <div class="container">
   <div class="box left">
-    <h1 class="title">{{leftTitle}}</h1>
+    <div class="title">{{leftTitle}}</div>
+    <div class="items customScrollBar">
+      <div (click)="selectItem(item)" class="item" *ngFor="let item of listItems" [ngClass]="{'active': item.active}">
+        {{item.title}}
+        <small *ngIf="item.subtitle">{{item.subtitle}}</small>
+      </div>
+    </div>
+    <div class="items-footer">
+      <small>Total de {{listItems.length}} Itens</small>
+    </div>
   </div>
   <div class="box center">
     <div class="actions">
       <button type="button">&gt;&gt;</button>
-      <button type="button">&gt;</button>
-      <hr />
-      <button type="button">&lt;</button>
+      <button type="button" (click)="moveSelected('right')">&gt;</button>
+      <div class="divider"></div>
+      <button type="button" (click)="moveSelected('left')">&lt;</button>
       <button type="button">&lt;&lt;</button>
     </div>
   </div>
   <div class="box right">
-    <h1 class="title">{{rightTitle}}</h1>
+    <div class="title">{{rightTitle}}</div>
+    <div class="items customScrollBar" *ngIf="listItemsSelected.length > 0">
+      <div (click)="selectItem(item)" class="item" *ngFor="let item of listItemsSelected" [ngClass]="{'active': item.active}">
+        {{item.title}}
+        <small *ngIf="item.subtitle">{{item.subtitle}}</small>
+      </div>
+    </div>
+    <div class="items-footer" *ngIf="listItemsSelected.length > 0">
+      <small>Total de {{listItemsSelected.length}} Itens</small>
+    </div>
   </div>
 </div>
