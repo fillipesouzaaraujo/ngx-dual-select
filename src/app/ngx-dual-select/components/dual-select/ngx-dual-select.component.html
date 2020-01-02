@@ -1,35 +1,47 @@
 <div class="container">
   <div class="box left">
     <div class="title">{{leftTitle}}</div>
+    <div class="search">
+      <input type="text" [(ngModel)]="searchTextA" placeholder="Pesquisar" />
+    </div>
     <div class="items customScrollBar">
-      <div (click)="selectItem(item)" class="item" *ngFor="let item of listItems" [ngClass]="{'active': item.active}">
+      <div (click)="selectItem(item)" class="item" *ngFor="let item of orderBy(listItems, 'title') | filter : searchTextA : 'title'" [ngClass]="{'active': item.active}">
         {{item.title}}
         <small *ngIf="item.subtitle">{{item.subtitle}}</small>
       </div>
     </div>
-    <div class="items-footer">
+    <div class="items-footer" *ngIf="(listItems | filter : searchTextA : 'title').length > 0">
       <small>Total de {{listItems.length}} Itens</small>
+    </div>
+    <div class="items-footer" *ngIf="(listItems | filter : searchTextA : 'title').length === 0 && searchTextA">
+      <small>Nenhum resultado encontrado!</small>
     </div>
   </div>
   <div class="box center">
     <div class="actions">
-      <button type="button">&gt;&gt;</button>
-      <button type="button" (click)="moveSelected('right')">&gt;</button>
+      <button [class]="buttonClass" type="button" (click)="moveSelected('right', true)">&gt;&gt;</button>
+      <button [class]="buttonClass" type="button" (click)="moveSelected('right', false)">&gt;</button>
       <div class="divider"></div>
-      <button type="button" (click)="moveSelected('left')">&lt;</button>
-      <button type="button">&lt;&lt;</button>
+      <button [class]="buttonClass" type="button" (click)="moveSelected('left', false)">&lt;</button>
+      <button [class]="buttonClass" type="button" (click)="moveSelected('left', true)">&lt;&lt;</button>
     </div>
   </div>
   <div class="box right">
     <div class="title">{{rightTitle}}</div>
+    <div class="search">
+      <input type="text" [(ngModel)]="searchTextB" placeholder="Pesquisar" />
+    </div>
     <div class="items customScrollBar" *ngIf="listItemsSelected.length > 0">
-      <div (click)="selectItem(item)" class="item" *ngFor="let item of listItemsSelected" [ngClass]="{'active': item.active}">
+      <div (click)="selectItem(item)" class="item" *ngFor="let item of  orderBy(listItemsSelected, 'title') | filter : searchTextB : 'title'" [ngClass]="{'active': item.active}">
         {{item.title}}
         <small *ngIf="item.subtitle">{{item.subtitle}}</small>
       </div>
     </div>
-    <div class="items-footer" *ngIf="listItemsSelected.length > 0">
+    <div class="items-footer" *ngIf="(listItemsSelected | filter : searchTextB : 'title').length > 0">
       <small>Total de {{listItemsSelected.length}} Itens</small>
+    </div>
+    <div class="items-footer" *ngIf="(listItemsSelected | filter : searchTextB : 'title').length === 0 && searchTextB">
+      <small>Nenhum resultado encontrado!</small>
     </div>
   </div>
 </div>

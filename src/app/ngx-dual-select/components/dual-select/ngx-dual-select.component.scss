@@ -31,6 +31,19 @@
     flex: 1 1 30%;
     height: auto;
 
+    .search {
+      display: flex;
+
+      input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding:5px 10px;
+        font-size: 14px;
+        outline: none;
+      }
+    }
+
     .items-footer {
       text-align: center;
       font-size: 12px;
