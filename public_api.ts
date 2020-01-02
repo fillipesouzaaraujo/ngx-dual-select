@@ -1,1 +1,1 @@
-export { NgxDualSelectModule } from './dist/public_api';
+export { NgxDualSelectModule } from './src/app/ngx-dual-select/ngx-dual-select.module';
